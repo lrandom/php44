@@ -9,13 +9,13 @@ $arr = [
         "address" => "Hai Phong"
     ]
 ];
-
+/*
 echo $arr["user2"]["address"];
 foreach ($arr as $kUser=>$vUser) {
     foreach ($vUser as $k => $value) {
         echo $value;
     }
-}
+}*/
 
 $arr2 = [
     [1, 2, 3, 3, 23, 223],
@@ -24,7 +24,7 @@ $arr2 = [
             1212, 12, 12, 34434]
     ]
 ];
-echo $arr2[1][3][3]//34434
+//echo $arr2[1][3][3]//34434
 
 $arr3 = [
     [1, 2, 23, 232],
@@ -34,3 +34,5 @@ $arr3 = [
         ]
     ]
 ];
+
+var_dump($arr3);
