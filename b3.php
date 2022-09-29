@@ -16,7 +16,6 @@ $email = "luann4099@gmail.com";
 $address = "Quảng Ninh";
 $gender = 0;
 $avatar = "https://thumbs.dreamstime.com/b/male-avatar-icon-flat-style-male-user-icon-cartoon-man-avatar-hipster-vector-stock-91462914.jpg";
-
 ?>
 
 <table border="1">
