@@ -1,47 +1,31 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
 <?php
-$weather = "Trời mưa";
-if ($weather == "Trời nắng") {
-    echo "Đi đá bóng";
-} else {
-    echo "Trong nhà ngủ";
-}
+/*$a = '1';//kiểu chuỗi
+$b = 1;//kiểu số
+echo $a == $b;//true/1
+echo $a != $b;//false/1
+echo $a === $b;//false
+echo $a !== $b;//true
+echo 10 > 5;//true
+echo 10 < 5;//false
+echo 10 >= 20;//false
+echo 10 <= 20;//false*/
 
-if ($weather == "Trời nắng") {
-    echo "Đi đá bóng";
-} else if ($weather == "Trời mưa") {
-    echo "Ra ngoài tắm mưa";
-} else if ($weather == "Trời râm mát") {
-    echo "Đi đá bóng";
-} else {
-    echo "Chả biết làm gì, chán đời";
-}
+/*$number = 1;
+echo ++$number;//2
+echo "\n";
+echo $number;//2*/
 
-switch ($weather) {
-    case 'Trời nắng':
-        echo "Đi đá bóng";
-        break;
+echo(true && true);
+echo "\n";
+echo(true || false);
+echo "\n";
+echo(true xor true);
+echo "\n";
+echo(!false);
 
-    case 'Trời mưa':
-        echo "Ra ngoài tắm mưa";
-        break;
+$str1 = "Hello";
+$str2 = "World";
+$str3 = $str1 . $str2;//phjeps nối chuỗi
 
-    case 'Trời râm mát':
-        echo "Đi đá bóng";
-        break;
-
-    default:
-        echo "Chả biết làm gì";
-}
-?>
-</body>
-</html>
+$str4 = "Hello";
+$str4 .= "World"; //$str4 = $str4 . "World";
