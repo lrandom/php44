@@ -8,15 +8,11 @@
     <title>Document</title>
 </head>
 <body>
- <?php
- function _image($link, $width, $height){
-     echo "<img src='$link' width='$width' height='$height'/>";
- }
- ?>
-
- <?php
- _image("https://d1hjkbq40fs2x4.cloudfront.net/2016-01-31/files/1045.jpg",500,200);
- _image("https://d1hjkbq40fs2x4.cloudfront.net/2016-01-31/files/1045.jpg",300,100);
- ?>
+<?php include_once 'commons/header.php'; ?>
+<?php include_once 'commons/header.php'; ?>
+<main>
+    This is main conent
+</main>
+<?php include 'commons/footer.php';?>
 </body>
 </html>
