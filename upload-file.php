@@ -9,6 +9,7 @@
 </head>
 <body>
 <form action="do-upload-file.php" enctype="multipart/form-data" method="post">
+    <input type="text" name="file_name">
     <input type="file" id="file" name="image">
     <button type="submit">Upload</button>
 </form>
