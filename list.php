@@ -1,3 +1,16 @@
+<?php
+$conn = new PDO("mysql:host=127.0.0.1;dbname=php_web_44", "root", "koodinh@");
+$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);//PDO biết là nếu SQL thực thi bị lỗi thì sẽ ném ra exception
+$conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);//PDO biết là nếu SQL thực thi thành công thì sẽ trả về dữ liệu dạng mảng kết hợp
+try {
+    $rs = $conn->query("SELECT * FROM users");
+} catch (Exception $exception) {
+    echo "Lỗi";
+    echo $exception->getMessage();
+}
+
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -8,34 +21,23 @@
     <title>Document</title>
 </head>
 <body>
-<?php
-require_once './dals/Users.php';
-$user = new Users();
-$data = $user->getList();
-?>
-
 <table>
     <thead>
     <tr>
         <th>ID</th>
         <th>Name</th>
-        <th>Age</th>
     </tr>
     </thead>
-
     <tbody>
-    <?php foreach ($data
+      <?php foreach ($rs as $item) {
+       ?>
+          <tr>
+              <td><?php echo $item->id; ?></td>
+              <td><?php echo $item->full_name; ?>></td>
+          </tr>
 
-                   as $r) {
-        ?>
-        <tr>
-            <td><?php echo $r->id; ?></td>
-            <td><?php echo $r->full_name; ?></td>
-            <td><?php echo $r->age; ?></td>
-        </tr>
-        <?php
-    }
-    ?>
+      <?php
+      } ?>
     </tbody>
 </table>
 </body>
