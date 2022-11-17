@@ -2,12 +2,16 @@
 session_start();
 if (isset($_POST['email']) && isset($_POST['password'])) {
     $email = $_POST['email'];
-    $password =  md5(md5($_POST['password']));
+    $password = md5(md5($_POST['password']));
     require_once 'dals/UserDal.php';
     $userDal = new UserDal();
     $user = $userDal->getObjectByEmailAndPassword($email, $password);
     if ($user != null) {
         $_SESSION['user'] = $user;
+        if (isset($_SESSION['return_url'])) {
+            header('Location: ' . $_SESSION['return_url']);
+            exit();
+        }
         header("Location: profile.php");
     } else {
         header("Location: login.php?error=1");
