@@ -19,7 +19,7 @@ SET FOREIGN_KEY_CHECKS = 0;
 
 -- ----------------------------
 -- Table structure for motors
--- ----------------------------
+--
 DROP TABLE IF EXISTS `motors`;
 CREATE TABLE `motors` (
   `id` int DEFAULT NULL,
