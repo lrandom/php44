@@ -1,11 +1,19 @@
 <?php
 spl_autoload_register(function ($class_name) {
-    include 'sub'.DIRECTORY_SEPARATOR.$class_name . '.php';
+    //$className = App\Controllers\PostController
+    $pathToFile = str_replace('\\', DIRECTORY_SEPARATOR,
+        $class_name);
+    //pathToFile = App/Controllers/PostController
+    $pathToFile = $pathToFile . '.php';
+    require_once __DIR__ . DIRECTORY_SEPARATOR . $pathToFile;
 });
 
-$vinfast = new Car('Vinfast');
-$vinfast->drive();
+use App\Controllers\PostController as PostController;
+use App\Models\User as User;
 
-$nouvo = new Motor("nouvo");
-$nouvo->drive();
+$postController = new PostController();
+$postController->index();
+
+$user = new User();
+var_dump($user->getList());
 ?>
