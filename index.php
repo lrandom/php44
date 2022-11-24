@@ -1,19 +1,13 @@
 <?php
-spl_autoload_register(function ($class_name) {
-    //$className = App\Controllers\PostController
-    $pathToFile = str_replace('\\', DIRECTORY_SEPARATOR,
-        $class_name);
-    //pathToFile = App/Controllers/PostController
-    $pathToFile = $pathToFile . '.php';
-    require_once __DIR__ . DIRECTORY_SEPARATOR . $pathToFile;
-});
+require_once __DIR__ . '/vendor/autoload.php';
+use Root\Php44\Controllers\UserControllers as UserControllers;
+use Mobile_Detect as Mobile_Detect;
 
-use App\Controllers\PostController as PostController;
-use App\Models\User as User;
-
-$postController = new PostController();
-$postController->index();
-
-$user = new User();
-var_dump($user->getList());
-?>
+$userController = new UserControllers();
+$userController->index();
+$mobile = new Mobile_Detect();
+if ($mobile->isMobile()) {
+    echo 'mobile';
+} else {
+    echo 'not mobile';
+}

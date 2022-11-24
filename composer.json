@@ -1,0 +1,20 @@
+{
+    "name": "root/php44",
+    "description": "HIHI",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Root\\Php44\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Nguyen Thanh Luan",
+            "email": "luann4099@gmail.com"
+        }
+    ],
+    "require": {
+        "mobiledetect/mobiledetectlib": "^2.8"
+    }
+}
